@@ -117,29 +117,29 @@ Meteor.methods({
                     console.log(e)
                 }
 
-                url = LCD + '/minting/inflation';
-                try{
-                    response = HTTP.get(url);
-                    let inflation = JSON.parse(response.content).result;
-                    if (inflation){
-                        chainStates.inflation = parseFloat(inflation)
-                    }
-                }
-                catch(e){
-                    console.log(e);
-                }
+                // url = LCD + '/minting/inflation';
+                // try{
+                //     response = HTTP.get(url);
+                //     let inflation = JSON.parse(response.content).result;
+                //     if (inflation){
+                //         chainStates.inflation = parseFloat(inflation)
+                //     }
+                // }
+                // catch(e){
+                //     console.log(e);
+                // }
 
-                url = LCD + '/minting/annual-provisions';
-                try{
-                    response = HTTP.get(url);
-                    let provisions = JSON.parse(response.content);
-                    if (provisions){
-                        chainStates.annualProvisions = parseFloat(provisions.result)
-                    }
-                }
-                catch(e){
-                    console.log(e);
-                }
+                // url = LCD + '/minting/annual-provisions';
+                // try{
+                //     response = HTTP.get(url);
+                //     let provisions = JSON.parse(response.content);
+                //     if (provisions){
+                //         chainStates.annualProvisions = parseFloat(provisions.result)
+                //     }
+                // }
+                // catch(e){
+                //     console.log(e);
+                // }
 
                 ChainStates.insert(chainStates);
             }
@@ -179,24 +179,24 @@ Meteor.methods({
                     pool: genesis.app_state.staking.pool,
                     params: genesis.app_state.staking.params
                 },
-                mint: genesis.app_state.mint,
+                // mint: genesis.app_state.mint,
                 distr: {
-                    communityTax: distr.community_tax,
-                    baseProposerReward: distr.base_proposer_reward,
-                    bonusProposerReward: distr.bonus_proposer_reward,
-                    withdrawAddrEnabled: distr.withdraw_addr_enabled
+                    communityTax: distribution.community_tax,
+                    baseProposerReward: distribution.base_proposer_reward,
+                    bonusProposerReward: distribution.bonus_proposer_reward,
+                    withdrawAddrEnabled: distribution.withdraw_addr_enabled
                 },
-                gov: {
-                    startingProposalId: genesis.app_state.gov.starting_proposal_id,
-                    depositParams: genesis.app_state.gov.deposit_params,
-                    votingParams: genesis.app_state.gov.voting_params,
-                    tallyParams: genesis.app_state.gov.tally_params
-                },
+                // gov: {
+                //     startingProposalId: genesis.app_state.gov.starting_proposal_id,
+                //     depositParams: genesis.app_state.gov.deposit_params,
+                //     votingParams: genesis.app_state.gov.voting_params,
+                //     tallyParams: genesis.app_state.gov.tally_params
+                // },
                 slashing:{
                     params: genesis.app_state.slashing.params
                 },
                 supply: genesis.app_state.supply,
-                crisis: genesis.app_state.crisis
+                // crisis: genesis.app_state.crisis
             }
 
             let totalVotingPower = 0;
