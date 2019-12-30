@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Badge, Row, Col } from 'reactstrap';
 import ChainStatus from './ChainStatusContainer.js';
 import Consensus from './ConsensusContainer.js';
-import TopValidators from './TopValidatorsContainer.js';
-import Chart from './ChartContainer.js';
-// import ChainStates from '../components/ChainStatesContainer.js'
+import LatestMessages from '../components/LatestMessagesContainer.js'
 import { Helmet } from "react-helmet";
 
 export default class Home extends Component{
@@ -25,12 +23,9 @@ export default class Home extends Component{
             <Consensus />
             <ChainStatus />
             <Row>
-                <Col md={6}>
-                    <TopValidators />
-                </Col>
-                <Col md={6}>
-                    <Chart />
-                </Col>
+                <Col>
+                    <LatestMessages />
+                </Col>    
             </Row>
         </div>
     }
