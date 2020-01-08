@@ -12,7 +12,6 @@ export default class AccountDelegations extends Component{
 
     }
 
-
     render(){
         let numDelegations = this.props.delegations.length;
         
