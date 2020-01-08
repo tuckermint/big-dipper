@@ -4,7 +4,6 @@ import AccountTooltip from '../components/AccountTooltip.jsx';
 import i18n from 'meteor/universe:i18n';
 import Coin from '/both/utils/coins.js';
 
-
 const T = i18n.createComponent();
 
 export default class AccountDelegations extends Component{
